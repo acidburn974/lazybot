@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Langs>
+  <en>
+    <BagsFull>Inventory is full</BagsFull>
+    <SkillToLow>Requires</SkillToLow>
+    <DruidFlying>You are flying</DruidFlying>
+    <ShapeShift>
+      You are in shapeshift form
+    </ShapeShift>
+    <CantMount>can't mount here</CantMount>
+    <WhileMoving>
+      Can't do that while moving
+    </WhileMoving>
+    <TrainingDummy>Training Dummy</TrainingDummy>
+    <YouHaveBeen>You have been</YouHaveBeen>
+  </en>
+  <de>
+    <BagsFull>Inventar ist voll</BagsFull>
+    <SkillToLow>benötigt</SkillToLow>
+    <DruidFlying>Du bist am fliegen</DruidFlying>
+    <ShapeShift>
+      Deine Gestalt ist verwandelt
+    </ShapeShift>
+    <CantMount>
+      Kann hier nicht reiten
+    </CantMount>
+    <WhileMoving>
+      Während einer Bewegung nicht möglich
+    </WhileMoving>
+    <TrainingDummy>Trainingsattrappe</TrainingDummy>
+    <YouHaveBeen>Sie wurden</YouHaveBeen>
+  </de>
+  <pt>
+    <BagsFull>
+      Inventório está cheio
+    </BagsFull>
+    <SkillToLow>Requer</SkillToLow>
+    <DruidFlying>Você está voando</DruidFlying>
+    <ShapeShift>
+      Você não está em sua forma
+    </ShapeShift>
+    <CantMount>
+      Impossível montar aqui
+    </CantMount>
+    <WhileMoving>
+      Impossível fazer isso enquanto se move
+    </WhileMoving>
+    <TrainingDummy>
+      Boneco de Treinamento
+    </TrainingDummy>
+    <YouHaveBeen>Você tem sido</YouHaveBeen>
+  </pt>
+  <fr>
+    <BagsFull>
+      Votre inventaire est plein
+    </BagsFull>
+    <SkillToLow>necessite</SkillToLow>
+    <DruidFlying>vous volez</DruidFlying>
+    <ShapeShift>Tempholder</ShapeShift>
+    <CantMount>ne peut monter ici</CantMount>
+    <WhileMoving>
+      Ne pouvez pas faire cela en vous deplacant
+    </WhileMoving>
+    <TrainingDummy>
+      mannequin d'entrainement
+    </TrainingDummy>
+    <YouHaveBeen>vous avez ete</YouHaveBeen>
+  </fr>
+  <ru>
+    <BagsFull>Нет места</BagsFull>
+    <SkillToLow>Требуется</SkillToLow>
+    <DruidFlying>Вы в полете</DruidFlying>
+    <ShapeShift>Вы в форме</ShapeShift>
+    <CantMount>
+      Здесь нельзя ездить верхом
+    </CantMount>
+    <WhileMoving>
+      Невозможно использовать во время движения
+    </WhileMoving>
+    <TrainingDummy>
+      Тренировочный манекен
+    </TrainingDummy>
+    <YouHaveBeen>Вы были</YouHaveBeen>
+  </ru>
+</Langs>

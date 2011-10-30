@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.mmo-lazybot.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.mmo-lazybot.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.mmo-lazybot.com/">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ws_GetOffsetsRequest">
+    <wsdl:part name="sessions" type="xsd:string" />
+    <wsdl:part name="username" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="ws_GetOffsetsResponse">
+    <wsdl:part name="offsets" type="xsd:integer" />
+  </wsdl:message>
+  <wsdl:portType name="LazyServicePortType">
+    <wsdl:operation name="ws_GetOffsets">
+      <documentation>Returns offsets needed for the bot to function</documentation>
+      <wsdl:input message="tns:ws_GetOffsetsRequest" />
+      <wsdl:output message="tns:ws_GetOffsetsResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LazyServiceBinding" type="tns:LazyServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="ws_GetOffsets">
+      <soap:operation soapAction="http://www.mmo-lazybot.com/#ws_GetOffsets" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.mmo-lazybot.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.mmo-lazybot.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LazyService">
+    <wsdl:port name="LazyServicePort" binding="tns:LazyServiceBinding">
+      <soap:address location="http://www.mmo-lazybot.com/test/test.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

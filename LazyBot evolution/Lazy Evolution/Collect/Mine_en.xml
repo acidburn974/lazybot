@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<MineList>
+  <Mine>Copper Vein</Mine>
+  <Mine>Tin Vein</Mine>
+  <Mine>
+    Ooze Covered Silver Vein
+  </Mine>
+  <Mine>Silver Vein</Mine>
+  <Mine>Iron Deposit</Mine>
+  <Mine>Gold Vein</Mine>
+  <Mine>
+    Ooze Covered Gold Vein
+  </Mine>
+  <Mine>Mithril Deposit</Mine>
+  <Mine>
+    Ooze Covered Mithril Deposit
+  </Mine>
+  <Mine>Truesilver Deposit</Mine>
+  <Mine>
+    Ooze Covered Truesilver Deposit
+  </Mine>
+  <Mine>Small Thorium Vein</Mine>
+  <Mine>Hakkari Thorium Vein</Mine>
+  <Mine>
+    Ooze Covered Rich Thorium Vein
+  </Mine>
+  <Mine>Rich Thorium Vein</Mine>
+  <Mine>Nethercite Deposit</Mine>
+  <Mine>Fel Iron Deposit</Mine>
+  <Mine>Large Obsidian Chunk</Mine>
+  <Mine>Small Obsidian Chunk</Mine>
+  <Mine>Adamantite Deposit</Mine>
+  <Mine>
+    Rich Adamantite Deposit
+  </Mine>
+  <Mine>Cobalt Deposit</Mine>
+  <Mine>Rich Cobalt Deposit</Mine>
+  <Mine>Khorium Vein</Mine>
+  <Mine>Saronite Deposit</Mine>
+  <Mine>
+    Rich Saronite Deposit
+  </Mine>
+  <Mine>
+    Pure Saronite Deposit
+  </Mine>
+  <Mine>Titanium Vein</Mine>
+  <Mine>Obsidium Deposit</Mine>
+  <Mine>
+    Rich Obsidium Deposit
+  </Mine>
+  <Mine>Elementium Vein</Mine>
+  <Mine>Rich Elementium Vein</Mine>
+  <Mine>Rich Pyrite Deposit</Mine>
+  <Mine>Pyrite Deposit</Mine>
+</MineList>

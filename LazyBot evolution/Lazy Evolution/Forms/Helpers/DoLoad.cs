@@ -47,7 +47,8 @@ namespace LazyEvo.Forms.Helpers
         {
             ObjectManager.MakeReady();
             Logging.Write("Visit www.mmo-lazybot.com for support.");
-            Logging.Write("LazyBot is free software!");
+            Logging.Write("LazyBot is free and open source software!");
+            Logging.Write("http://www.assembla.com/spaces/lazybot/wiki");
             Logging.Write("Keys should be placed on bar 1-6 and position 1-9!");
             LoadNow();
         }

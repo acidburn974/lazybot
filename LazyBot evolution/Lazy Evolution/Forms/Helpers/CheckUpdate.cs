@@ -17,8 +17,11 @@ This file is part of LazyBot - Copyright (C) 2011 Arutha
 
 #region
 
+using System;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
+using LazyLib;
 
 #endregion
 

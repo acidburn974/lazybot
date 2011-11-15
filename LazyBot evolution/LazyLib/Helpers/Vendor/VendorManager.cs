@@ -28,6 +28,38 @@ namespace LazyLib.Helpers.Vendor
     public class VendorManager
     {
         private static readonly List<string> Sold = new List<string>();
+        public static event EventHandler SellFinished;
+        public static void DoSellMammoth()
+        {
+
+            try
+            {
+                ProtectedList.Load();
+                MailList.Load();
+                //Target vendor TODO: Looking for a better solution
+                LazyLib.Helpers.KeyHelper.ChatboxSendText("/target Drix Blackwrench");
+                Thread.Sleep(1000);
+                //Interact vendor
+                LazyLib.Helpers.KeyHelper.SendKey("InteractTarget");
+                MouseHelper.Hook();
+                MailManager.OpenAllBags();
+                if (LazySettings.ShouldVendor)
+                {
+                    Logging.Write("[Vendor]Going to sell items");
+                    Sell();
+                }
+                if (LazySettings.ShouldRepair)
+                {
+                    Repair();
+                }
+            }
+            finally
+            {
+                MailManager.CloseAllBags();
+                MouseHelper.ReleaseMouse();
+                SellFinished("VendorEngine", new EventArgs());
+            }
+        }
         public static void DoSell(PUnit vendor)
         {
             try
@@ -59,6 +91,7 @@ namespace LazyLib.Helpers.Vendor
             {
                 MailManager.CloseAllBags();
                 MouseHelper.ReleaseMouse();
+                SellFinished("VendorEngine", new EventArgs());
             }
         }
 

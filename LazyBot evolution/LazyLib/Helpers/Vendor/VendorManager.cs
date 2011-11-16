@@ -29,7 +29,7 @@ namespace LazyLib.Helpers.Vendor
     {
         private static readonly List<string> Sold = new List<string>();
         public static event EventHandler SellFinished;
-        public static void DoSellMammoth()
+        public static void DoSell(String unit_name)
         {
 
             try
@@ -37,8 +37,13 @@ namespace LazyLib.Helpers.Vendor
                 ProtectedList.Load();
                 MailList.Load();
                 //Target vendor TODO: Looking for a better solution
-                LazyLib.Helpers.KeyHelper.ChatboxSendText("/target Drix Blackwrench");
-                Thread.Sleep(1000);
+                LazyLib.Helpers.KeyHelper.ChatboxSendText("/target " + unit_name);
+                Thread.Sleep(3000);
+                if (LazyLib.Wow.ObjectManager.MyPlayer.Target.Name != unit_name)
+                {
+                    Logging.Write("Could not target vendor: "+ unit_name);
+                    return;
+                }
                 //Interact vendor
                 LazyLib.Helpers.KeyHelper.SendKey("InteractTarget");
                 MouseHelper.Hook();
@@ -57,7 +62,10 @@ namespace LazyLib.Helpers.Vendor
             {
                 MailManager.CloseAllBags();
                 MouseHelper.ReleaseMouse();
-                SellFinished("VendorEngine", new EventArgs());
+                if (SellFinished != null)
+                {
+                    SellFinished("VendorEngine", new EventArgs());
+                }
             }
         }
         public static void DoSell(PUnit vendor)
@@ -91,7 +99,10 @@ namespace LazyLib.Helpers.Vendor
             {
                 MailManager.CloseAllBags();
                 MouseHelper.ReleaseMouse();
-                SellFinished("VendorEngine", new EventArgs());
+                if (SellFinished != null)
+                {
+                    SellFinished("VendorEngine", new EventArgs());
+                }
             }
         }
 

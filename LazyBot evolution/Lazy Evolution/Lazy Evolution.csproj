@@ -54,7 +54,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
-    <Reference Include="DevComponents.Instrumentation, Version=9.0.0.4, Culture=neutral, PublicKeyToken=f90dc37c26666a67, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.Instrumentation, Version=10.1.0.1, Culture=neutral, PublicKeyToken=f90dc37c26666a67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\DevComponents.Instrumentation.dll</HintPath>
+    </Reference>
     <Reference Include="QuickGraph, Version=3.3.51106.0, Culture=neutral, PublicKeyToken=f3fb40175eec2af3, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\QuickGraph.dll</HintPath>
@@ -226,7 +229,22 @@
     <Compile Include="Other\ScriptRunner.cs" />
     <Compile Include="Other\Hook.cs" />
     <Compile Include="PluginSystem\PluginManager.cs" />
+    <Compile Include="Plugins\ExtraLazy\Forms\Frame Dumper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plugins\ExtraLazy\Forms\Frame Dumper.designer.cs">
+      <DependentUpon>Frame Dumper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plugins\ExtraLazy\FrameViewer.cs" />
     <Compile Include="Plugins\PeriodicRelogger.cs" />
+    <Compile Include="Plugins\ExtraLazy\Professions.cs" />
+    <Compile Include="Plugins\Professions\Loader.cs" />
+    <Compile Include="Plugins\Professions\Forms\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plugins\Professions\Forms\Settings.designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plugins\Relogger.cs" />
     <Compile Include="Plugins\ReloggerSettings.cs" />
     <Compile Include="Plugins\Encrypt.cs" />
@@ -382,6 +400,12 @@
     <EmbeddedResource Include="LGrindEngine\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Plugins\ExtraLazy\Forms\Frame Dumper.resx">
+      <DependentUpon>Frame Dumper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plugins\Professions\Forms\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Plugins\RotationPlugin\RotatorForm.resx">
       <DependentUpon>RotatorForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -496,6 +520,7 @@
   <ItemGroup>
     <WebReferences Include="Web References\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

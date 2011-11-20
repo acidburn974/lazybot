@@ -58,6 +58,11 @@ namespace LazyEvo.Classes
             Assemblys.Clear();
             var converter = new Converter();
             Assemblys.Add("Converter", converter);
+
+            //Loads lazy data demo
+            //added by hertzigger
+            LazyEvo.Plugins.LazyData.Loader lazyData = new LazyEvo.Plugins.LazyData.Loader();
+            Assemblys.Add("Lazy Data", lazyData);
             try
             {
                 if (!Directory.Exists(LazyForms.OurDirectory + "\\Plugins"))

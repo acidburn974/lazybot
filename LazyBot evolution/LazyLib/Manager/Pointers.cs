@@ -198,6 +198,15 @@ namespace LazyLib.Wow
 
         #endregion
 
+        #region BlueChat
+
+        internal enum BlueChat
+        {
+            BlueBase = 0xA98068
+        }
+
+        #endregion
+
         #region Nested type: ComboPoints
 
         /// <summary>

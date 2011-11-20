@@ -59,6 +59,15 @@ namespace LazyEvo.Plugins.LazyData
 
         public void Pulse()
         {
+            
+        }
+
+        public static void updateSkills()
+        {
+            settingsForm.BlueChat = BlueChat.readChat();
+            settingsForm.setBlueChat();
+            Thread.Sleep(500);
+            updateSkills();
         }
 
         public static void getProfessions()
@@ -72,9 +81,12 @@ namespace LazyEvo.Plugins.LazyData
 
         public void Settings()
         {
-            getProfessions();
+            //getProfessions();
             Logging.Write("Viewing professions");
             settingsForm.Show();
+            Thread workerThread = new Thread(updateSkills);
+            workerThread.Start();
+            updateRunning = true;
         }
 
         private void ChatNewChatMessage(object sender, GChatEventArgs e)

@@ -16,6 +16,19 @@ namespace LazyEvo.Plugins.LazyData
     public partial class frmProfessions : Form
     {
         private Professions _professions;
+        private String _blueChat;
+
+        public String BlueChat
+        {
+            get
+            {
+                return this._blueChat;
+            }
+            set
+            {
+                this._blueChat = value;
+            }
+        }
 
         public Professions Professions {
             get
@@ -124,6 +137,17 @@ namespace LazyEvo.Plugins.LazyData
         private void button3_Click(object sender, EventArgs e)
         {
             FrameViewer viewer = new FrameViewer();
+        }
+        private delegate void SetBlueChat();
+        public void setBlueChat()
+        {
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new SetBlueChat(setBlueChat));
+
+                return;
+            }
+            this.txtBoxChat.Text = this._blueChat;
         }
     }
 

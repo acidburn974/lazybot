@@ -13,6 +13,8 @@ namespace LazyEvo.Plugins.LazyData
         private static Professions professions;
         private static frmProfessions settingsForm;
         private static Boolean professionsLoaded;
+        private static Thread workerThread;
+        private static String previousBlueChat;
 
         public string GetName()
         {
@@ -41,6 +43,11 @@ namespace LazyEvo.Plugins.LazyData
             //creating a local reference to the professions
             professions = p;
             professionsLoaded = true;
+            //start live updating
+            if (!workerThread.IsAlive)
+            {
+                workerThread.Start();
+            }
         }
 
         public void PluginUnload()
@@ -62,12 +69,28 @@ namespace LazyEvo.Plugins.LazyData
             
         }
 
-        public static void updateSkills()
+        private static void updateSkills()
         {
-            settingsForm.BlueChat = BlueChat.readChat();
-            settingsForm.setBlueChat();
-            Thread.Sleep(500);
-            updateSkills();
+            while (true)
+            {
+                String blueChat = EventMessage.readChat();
+                if (blueChat != previousBlueChat)
+                {
+                    settingsForm.BlueChat = blueChat;
+                    settingsForm.setBlueChat();
+                    if (professions.MsgUpdate(blueChat))
+                    {
+                        professionsReady(professions);
+                    }
+                    previousBlueChat = blueChat;
+                }
+                Thread.Sleep(500);
+            }
+        }
+
+        public static void stopUpdating()
+        {
+            workerThread.Abort();
         }
 
         public static void getProfessions()
@@ -84,17 +107,12 @@ namespace LazyEvo.Plugins.LazyData
             //getProfessions();
             Logging.Write("Viewing professions");
             settingsForm.Show();
-            Thread workerThread = new Thread(updateSkills);
-            workerThread.Start();
-            updateRunning = true;
+            workerThread = new Thread(updateSkills);
         }
 
         private void ChatNewChatMessage(object sender, GChatEventArgs e)
         {
-            if (professionsLoaded)
-            {
-                professions.ChatMessage(sender, e);
-            }
+            
             //Logging.Write("Plugin got chat message: " + e.Msg.Player + " " + e.Msg.Msg);
         }        
     }

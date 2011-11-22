@@ -200,9 +200,9 @@ namespace LazyLib.Wow
 
         #region BlueChat
 
-        internal enum BlueChat
+        internal enum Messages
         {
-            BlueBase = 0xA98068
+            EventMessage = 0xA98068
         }
 
         #endregion

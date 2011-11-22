@@ -646,6 +646,7 @@
             this.label49.Size = new System.Drawing.Size(113, 13);
             this.label49.TabIndex = 12;
             this.label49.Text = "Awaiting Results...";
+            this.label49.Visible = false;
             this.label49.Click += new System.EventHandler(this.label49_Click);
             // 
             // button1

@@ -7,11 +7,11 @@ using LazyLib.Wow;
 
 namespace LazyEvo.Plugins.ExtraLazy
 {
-    public class BlueChat
+    public class EventMessage
     {
         public static String readChat()
         {
-            return Memory.ReadUtf8StringRelative(Convert.ToUInt32((uint)Pointers.BlueChat.BlueBase), 128);
+            return Memory.ReadUtf8StringRelative(Convert.ToUInt32((uint)Pointers.Messages.EventMessage), 128);
         }
     }
 }

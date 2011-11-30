@@ -29,11 +29,11 @@ namespace LazyLib.Wow
         #region Globals enum
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         public enum Globals
         {
-            PlayerName = 0x980598,
+            PlayerName = 0x9BE6B8,
         }
 
         #endregion
@@ -41,11 +41,11 @@ namespace LazyLib.Wow
         #region InGame enum
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         public enum InGame
         {
-            InGame = 0xA98C66,
+            InGame = 0xAD7296,
         }
 
         #endregion
@@ -56,12 +56,12 @@ namespace LazyLib.Wow
         #region ActionBar enum
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         public enum ActionBar
         {
-            ActionBarFirstSlot = 0xB07398,
-            ActionBarBonus = 0xB075DC,
+            ActionBarFirstSlot = 0xB440E0,
+            ActionBarBonus = 0xB44324,
         }
 
         #endregion
@@ -69,11 +69,11 @@ namespace LazyLib.Wow
         #region AutoLoot enum
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         public enum AutoLoot
         {
-            Pointer = 0xA98E58,
+            Pointer = 0xAD74A0,
             Offset = 0x30,
         }
 
@@ -82,7 +82,7 @@ namespace LazyLib.Wow
         #region CgUnitCGetCreatureRank enum
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         public enum CgUnitCGetCreatureRank
         {
@@ -95,7 +95,7 @@ namespace LazyLib.Wow
         #region CgUnitCGetCreatureType enum
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         public enum CgUnitCGetCreatureType
         {
@@ -108,12 +108,12 @@ namespace LazyLib.Wow
         #region CgWorldFrameGetActiveCamera enum
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         public enum CgWorldFrameGetActiveCamera
         {
-            CameraPointer = 0xA99220,
-            CameraOffset = 0x7F50,
+            CameraPointer = 0xAD7870,
+            CameraOffset = 0x80D0,
             CameraX = 0x8,
             CameraY = 0xC,
             CameraZ = 0x10,
@@ -122,23 +122,26 @@ namespace LazyLib.Wow
 
         #endregion
 
+        /// <summary>
+        ///   4.3
+        /// </summary>
         public enum Quests
         {
             ActiveQuests = 0x274,
-            SelectedQuestId = 0xB050B4,
-            TitleText = 0xB04EA0,
-            GossipQuests = 0xB334E8,
+            SelectedQuestId = 0xB436F0,
+            TitleText = 0xB434D0,
+            GossipQuests = 0xB70F08,
             GossipQuestNext = 0x214,
         }
 
         #region ClickToMove enum
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         public enum ClickToMove
         {
-            Pointer = 0xA98E38,
+            Pointer = 0xAD7480,
             Offset = 0x30,
         }
 
@@ -147,13 +150,13 @@ namespace LazyLib.Wow
         #region IsFlying enum
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         public enum IsFlying
         {
             // Reversed from Lua_IsFlying
             Pointer = 0x100,
-            Offset = 0x44,
+            Offset = 0x38,
             Mask = 0x1000000
         }
 
@@ -162,7 +165,7 @@ namespace LazyLib.Wow
         #region Nested type: AutoAttack
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         internal enum AutoAttack
         {
@@ -175,7 +178,7 @@ namespace LazyLib.Wow
         #region Nested type: CastingInfo
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         internal enum CastingInfo
         {
@@ -188,18 +191,20 @@ namespace LazyLib.Wow
         #region Nested type: Chat
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         internal enum Chat : uint
         {
-            ChatStart = 0xA9A970 + 0x3C,
+            ChatStart = 0xAD8FD0 + 0x3C,
             OffsetToNextMsg = 0x17C0,
         }
 
         #endregion
 
         #region BlueChat
-
+        /// <summary>
+        ///   4.2  - Not updated
+        /// </summary>
         internal enum Messages
         {
             EventMessage = 0xA98068
@@ -210,11 +215,11 @@ namespace LazyLib.Wow
         #region Nested type: ComboPoints
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         internal enum ComboPoints
         {
-            ComboPoints = 0xA98D25,
+            ComboPoints = 0xAD7361,
         }
 
         #endregion
@@ -222,11 +227,11 @@ namespace LazyLib.Wow
         #region Nested type: Container
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         internal enum Container
         {
-            EquippedBagGUID = 0xB10280,
+            EquippedBagGUID = 0xB4DC38,
         }
 
         #endregion
@@ -234,17 +239,17 @@ namespace LazyLib.Wow
         #region Nested type: Globals
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         internal enum Globals
         {
-            RedMessage = 0xA98068,
-            MouseOverGUID = 0xA98C70,
-            LootWindow = 0xB07C78,
+            RedMessage = 0xAD6698,
+            MouseOverGUID = 0xAD72A8,
+            LootWindow = 0xB45088,
             IsBobbing = 0xD4,
             ArchFacing = 0x1c8,
-            ChatboxIsOpen = 0xA88628,
-            CursorType = 0x9036D8,
+            ChatboxIsOpen = 0xAC6C58,
+            CursorType = 0x93D0E0,
         }
 
         #endregion
@@ -252,11 +257,11 @@ namespace LazyLib.Wow
         #region Nested type: Items
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         internal enum Items : uint
         {
-            Offset = 0x95A520,
+            Offset = 0x998580,
         }
 
         #endregion
@@ -264,11 +269,11 @@ namespace LazyLib.Wow
         #region Nested type: KeyBinding
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         internal enum KeyBinding
         {
-            NumKeyBindings = 0xAF5694,
+            NumKeyBindings = 0xB33D04,
             First = 0xC8,
             Next = 0xC0,
             Key = 0x14,
@@ -280,15 +285,15 @@ namespace LazyLib.Wow
         #region Nested type: ObjectManager
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         internal enum ObjectManager
         {
-            CurMgrPointer = 0x980558,
+            CurMgrPointer = 0x9BE678,
             CurMgrOffset = 0x463C,
-            FirstObject = 0xB4,
-            NextObject = 0x3C,
-            LocalGUID = 0xB8,
+            NextObject = 0x3C, //4.3.0.15005
+            FirstObject = 0xC0, //4.3.0.15005
+            LocalGUID = 0xC8 //4.3.0.15005
         }
 
         #endregion
@@ -296,13 +301,13 @@ namespace LazyLib.Wow
         #region Nested type: Reaction
 
         /// <summary>
-        ///   4.2
+        ///   4.3
         /// </summary>
         internal enum Reaction : uint
         {
-            FactionStartIndex = 0x95AF54,
-            FactionPointer = 0x95AF60,
-            FactionTotal = 0x95AF50,
+            FactionStartIndex = 0x998F98,
+            FactionPointer = 0x998FA4,
+            FactionTotal = 0x998F94,
             HostileOffset1 = 0x14,
             HostileOffset2 = 0x0C,
             FriendlyOffset1 = 0x10,
@@ -314,11 +319,11 @@ namespace LazyLib.Wow
         #region Nested type: Runes
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         internal enum Runes
         {
-            RunesOffset = 0xAF7804,
+            RunesOffset = 0xB35E54,
         }
 
         #endregion
@@ -326,7 +331,7 @@ namespace LazyLib.Wow
         #region Nested type: ShapeshiftForm
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         internal enum ShapeshiftForm
         {
@@ -339,11 +344,11 @@ namespace LazyLib.Wow
         #region Nested type: SpellCooldown
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         internal enum SpellCooldown : uint
         {
-            CooldPown = 0xA8EF54,
+            CooldPown = 0xACD584,
         }
 
         #endregion
@@ -351,12 +356,12 @@ namespace LazyLib.Wow
         #region Nested type: Swimming
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         internal enum Swimming
         {
             Pointer = 0x100,
-            Offset = 0x44,
+            Offset = 0x38,
             Mask = 0x100000,
         }
 
@@ -365,7 +370,7 @@ namespace LazyLib.Wow
         #region Nested type: UnitAuras
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         internal enum UnitAuras : uint
         {
@@ -384,7 +389,7 @@ namespace LazyLib.Wow
         #region Nested type: UnitName
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         internal enum UnitName : uint
         {
@@ -392,7 +397,7 @@ namespace LazyLib.Wow
             ObjectName2 = 0xB4,
             UnitName1 = 0x91C,
             UnitName2 = 0x64,
-            PlayerNameCachePointer = 0x959EE0 + 0x8,
+            PlayerNameCachePointer = 0x997F48,
             PlayerNameMaskOffset = 0x024,
             PlayerNameBaseOffset = 0x01c,
             PlayerNameStringOffset = 0x020
@@ -403,12 +408,12 @@ namespace LazyLib.Wow
         #region Nested type: UnitSpeed
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         internal enum UnitSpeed
         {
             Pointer1 = 0x100,
-            Pointer2 = 0x8c,
+            Pointer2 = 0x80,
         }
 
         #endregion
@@ -416,7 +421,7 @@ namespace LazyLib.Wow
         #region Nested type: WowObject
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         internal enum WowObject
         {
@@ -434,12 +439,12 @@ namespace LazyLib.Wow
         #region Nested type: Zone
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         internal enum Zone : uint
         {
-            ZoneText = 0xA98C5C,
-            ZoneID = 0xA98CE4,
+            ZoneText = 0xAD7288,
+            ZoneID = 0xAD7320,
         }
 
         #endregion
@@ -448,7 +453,7 @@ namespace LazyLib.Wow
         #region Nested type: UiFrame
 
         /// <summary>
-        ///   4.2.2
+        ///   4.3
         /// </summary>
         internal enum UiFrame
         {
@@ -466,14 +471,14 @@ namespace LazyLib.Wow
             NextFrame = 0xCDC,
             RegionsFirst = 0x170,
             RegionsNext = 0x168,
-            FrameBase = 0x99567C,
-            ScrHeight = 0x8D069C,
-            ScrWidth = 0x8D0698,
+            FrameBase = 0x9D379C,
+            ScrHeight = 0x909A04,
+            ScrWidth = 0x909A00,
             Visible = 0x64,
             Visible1 = 0x1A,
             Visible2 = 1,
             CurrentFrameOffset = 0x88,
-            CurrentFramePtr = 0x99567C,
+            CurrentFramePtr = 0x9D379C,
         }
 
         #endregion

@@ -18,6 +18,7 @@ This file is part of LazyBot - Copyright (C) 2011 Arutha
 #region
 
 using System.Reflection;
+using System.Threading;
 using LazyLib.Helpers;
 
 #endregion
@@ -112,17 +113,14 @@ namespace LazyLib.Wow
         {
             get
             {
-                //some sort of List index
                 try
-                {
-                    var var1 =
-                        Memory.ReadRelative<int>((((uint) Pointers.UnitName.PlayerNameCachePointer) +
+                {                  
+                    var var1 = Memory.ReadRelative<int>((((uint) Pointers.UnitName.PlayerNameCachePointer) +
                                                   (uint) Pointers.UnitName.PlayerNameMaskOffset));
                     if (var1 == -1)
                         return "Unknown Player";
                     //here we're getting the pointer to the start of the linked List
-                    var var2 =
-                        Memory.ReadRelative<int>((((uint) Pointers.UnitName.PlayerNameCachePointer) +
+                    var var2 = Memory.ReadRelative<int>((((uint) Pointers.UnitName.PlayerNameCachePointer) +
                                                   (uint) Pointers.UnitName.PlayerNameBaseOffset));
                     var1 &= (int) GUID;
                     var1 += var1*2;
@@ -148,7 +146,7 @@ namespace LazyLib.Wow
 
                     //now that we have the correct entry in the linked List,
                     //read its name from entry+0x20
-                    return Memory.ReadUtf8((uint) (var1 + (uint) Pointers.UnitName.PlayerNameStringOffset), 40);
+                    return Memory.ReadUtf8((uint) (var1 + (uint) Pointers.UnitName.PlayerNameStringOffset), 40); 
                 }
                 catch
                 {

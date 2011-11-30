@@ -182,7 +182,7 @@ namespace LazyLib.Wow
 
         public uint StorageField
         {
-            get { return Memory.Read<uint>(BaseAddress + 0x08); }
+            get { return Memory.Read<uint>(BaseAddress + 0xc); }
         }
 
         protected T GetStorageField<T>(uint field) where T : struct
@@ -190,7 +190,7 @@ namespace LazyLib.Wow
             try
             {
                // field = field *4; //TODO ENABLE IF OFFSETS IS NOT MULTIPLIED BY 0x4
-                var m_pStorage = Memory.Read<uint>(BaseAddress + 0x08);
+                var m_pStorage = Memory.Read<uint>(BaseAddress + 0xc);
 
                 return (T) Memory.ReadObject(m_pStorage + field, typeof (T));
             }

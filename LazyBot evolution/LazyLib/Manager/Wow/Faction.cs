@@ -54,7 +54,7 @@ namespace LazyLib.Wow
 
             Reaction reaction;
 
-            if (localFaction >= startIndex && localFaction < totalFactions)
+            if (localFaction >= startIndex && localFaction <= totalFactions)
             {
                 if (mobFaction >= startIndex && mobFaction < totalFactions)
                 {

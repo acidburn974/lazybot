@@ -29,8 +29,6 @@ namespace LazyEvo.Forms.Helpers
                 {
                     try
                     {
-                        LazyForms.MainForm.UpdateGroupControl(LazyForms.MainForm.MainGPPlayer,
-                                                              ObjectManager.MyPlayer.Name);
                         LazyForms.MainForm.UpdateProgressBar(LazyForms.MainForm.MainPBPlayerHP,
                                                              ObjectManager.MyPlayer.Health);
                         LazyForms.MainForm.UpdateProgressBar(LazyForms.MainForm.MainPBPlayerXP,
@@ -39,6 +37,8 @@ namespace LazyEvo.Forms.Helpers
                                                            ObjectManager.MyPlayer.Health + "%");
                         LazyForms.MainForm.UpdateTextLabel(LazyForms.MainForm.MainLBPlayerXP,
                                                            ObjectManager.MyPlayer.ExperiencePercentage + "%");
+                        LazyForms.MainForm.UpdateGroupControl(LazyForms.MainForm.MainGPPlayer,
+                                      ObjectManager.MyPlayer.Name);
                         switch (ObjectManager.MyPlayer.PowerTypeId)
                         {
                             case (uint) Constants.UnitPower.UnitPower_Energy:

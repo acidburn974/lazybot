@@ -144,7 +144,8 @@ namespace LazyLib
             //Mail
             ShouldMail = pIniManager.GetBoolean("Mail", "ShouldMail", false);
             MailTo = pIniManager.GetString("Mail", "MailTo", string.Empty);
-            MacroForMail = pIniManager.GetBoolean("Mail", "MacroForMail", false);
+            //MacroForMail = pIniManager.GetBoolean("Mail", "MacroForMail", false);
+            MacroForMail = false;
             KeysMailMacroBar = pIniManager.GetString("Mail", "KeysMailMacroBar", "1");
             KeysMailMacroKey = pIniManager.GetString("Mail", "KeysMailMacroKey", "1");
 

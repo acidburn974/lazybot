@@ -323,7 +323,7 @@ namespace LazyLib.Wow
         /// </summary>
         internal enum Runes
         {
-            RunesOffset = 0xB35E54,
+            RunesOffset = 0xB35EB8,
         }
 
         #endregion

@@ -537,11 +537,9 @@ namespace LazyLib.Wow
             Thread.Sleep(100);
         }
 
-        private bool IsRuneReady(uint runeIndex)
+        private bool IsRuneReady(int runeIndex)
         {
-            uint foo = (uint) Pointers.Runes.RunesOffset + runeIndex*0x04;
-            var result = Memory.ReadRelative<byte>(foo);
-            return (result <= 0);
+            return (((1 << runeIndex) & Memory.ReadRelative<byte>((uint)Pointers.Runes.RunesOffset)) == 0);
         }
     }
 }

@@ -305,9 +305,9 @@ namespace LazyLib.Wow
         /// </summary>
         internal enum Reaction : uint
         {
-            FactionStartIndex = 0x998F98,
-            FactionPointer = 0x998FA4,
-            FactionTotal = 0x998F94,
+            FactionStartIndex = 0x998FB4,
+            FactionPointer = FactionStartIndex + 0xC,
+            FactionTotal = FactionStartIndex - 0x4,
             HostileOffset1 = 0x14,
             HostileOffset2 = 0x0C,
             FriendlyOffset1 = 0x10,

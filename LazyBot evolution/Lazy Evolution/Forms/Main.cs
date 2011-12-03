@@ -46,7 +46,7 @@ namespace LazyEvo.Forms
 {
     internal partial class Main : Office2007Form
     {
-        private const string LazyVersion = "1.5.1";
+        private const string LazyVersion = "1.5.2";
         internal static CombatEngine CombatEngine;
         internal static ILazyEngine EngineHandler;
         internal static bool OneInstance;
